@@ -27,6 +27,8 @@ wedge_height = 10;
 wedge_length = 14;
 wedge_width = pillow_width;
 
+show_fabric = false;
+
 module mattress () {
     color("gray") cube([mattress_length, mattress_width, mattress_height]);
     
@@ -42,8 +44,9 @@ module mattress () {
         ]);
     }
     
-    color("green") fabric();
-    
+    if (show_fabric) {
+        color("green") fabric();         
+    }   
 }
 
 
@@ -178,7 +181,9 @@ module box(size) {
     lumber();
     foam();
     
-    color("green") fabric();
+    if (show_fabric) {
+        color("green") fabric();
+    }
 }
 
 module box_a () {
