@@ -1,8 +1,6 @@
 
 ```sh
-./node_modules/.bin/tsc
-./node_modules/.bin/openjscad build/main.js
- qlmanage -p build/main.stl
+./node_modules/.bin/tsc; ./node_modules/.bin/openjscad build/model.js; qlmanage -p build/model.stl
 ```
 
 ## References

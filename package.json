@@ -3,21 +3,15 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "watch": "tsc -w",
-    "start": "electron ./dist/main.js"
-  },
+  "scripts": {},
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@jscad/cli": "^1.10.0",
     "@jscad/csg": "^0.7.0",
-    "@jscad/csg-viewer": "github:jscad/csg-viewer",
     "@types/lodash": "^4.14.120",
     "@types/node": "^10.12.18",
-    "electron": "^4.0.2",
-    "electron-reloader": "^0.2.0",
     "lodash": "^4.17.11",
     "ts-node": "^8.0.2",
     "tslint": "^5.12.1",

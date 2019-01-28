@@ -10,8 +10,8 @@
 		"jsx": "react",
 		"target": "es5",
 		"lib": ["es6", "es2017", "dom", "scripthost", "esnext.asynciterable"],
-		"outDir": "./dist/"
+		"outDir": "./build/"
 	},
-	"include": ["src/**/*.ts"],
+	"include": ["*.ts"],
 	"exclude": ["node_modules"]
 }
