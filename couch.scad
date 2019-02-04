@@ -8,7 +8,7 @@ mattress_space = 1.5;
 fabric_margin = 6;
 fabric_thickness = 0.1;
 
-ply_thickness = 0.5;
+ply_thickness = 0.25;
 lumber_thickness = 1.5;
 top_foam_thickness = 2;
 side_foam_thickness = 0.5;
@@ -29,7 +29,9 @@ wedge_width = pillow_width;
 
 bed_frame_board_size = [2.5, 0.75];
 bed_frame_base_boards = 7;
-bed_frame_cross_boards = 16;
+bed_frame_cross_boards = 17;
+
+inner_lumber_boards = 7;
 
 show_fabric = false;
 
@@ -83,7 +85,6 @@ module box(size) {
     end_foam_size = [size[1] + 2*side_foam_thickness, size[2] - feet_height];
     side_lumber_length = size[0] - 2 * ply_thickness;
 
-    inner_lumber_boards = 6;
     inner_width_lumber_length = size[1] - 2*lumber_thickness - 2*ply_thickness;
     inner_height_lumber_length = size[2] - 2*lumber_thickness - ply_thickness - feet_height;
 
@@ -125,9 +126,9 @@ module box(size) {
     module side_foam() {
         echo("2x side foam", side_foam_size[0], side_foam_size[1]);
         translate([0, -side_foam_thickness, feet_height])
-            cube([side_foam_size[0], ply_thickness, side_foam_size[1]]);
+            cube([side_foam_size[0], side_foam_thickness, side_foam_size[1]]);
         translate([0, size[1], feet_height])
-            cube([side_foam_size[0], ply_thickness, side_foam_size[1]]);
+            cube([side_foam_size[0], side_foam_thickness, side_foam_size[1]]);
     }
 
     module end_ply() {
@@ -142,9 +143,9 @@ module box(size) {
     module end_foam() {
         echo("2x end foam", end_foam_size[0], end_foam_size[1]);
         translate([-side_foam_thickness, -side_foam_thickness, feet_height])
-        cube([ply_thickness, end_foam_size[0], end_foam_size[1]]);
+            cube([side_foam_thickness, end_foam_size[0], end_foam_size[1]]);
         translate([size[0], -side_foam_thickness, feet_height])
-            cube([ply_thickness, end_foam_size[0], end_foam_size[1]]);
+            cube([side_foam_thickness, end_foam_size[0], end_foam_size[1]]);
     }
 
     module side_lumber() {
@@ -159,10 +160,12 @@ module box(size) {
             cube([side_lumber_length, lumber_thickness, lumber_thickness]);
     }
 
-    inc = (size[0] - ply_thickness - ply_thickness - lumber_thickness) / (inner_lumber_boards - 1);
+    inner_inc = (size[0] - ply_thickness - ply_thickness - lumber_thickness) / (inner_lumber_boards - 1);
+
+    echo("inner_inc", inner_inc);
 
     module inner_width_lumber() {
-        for(x = [0 : inc : size[0] - ply_thickness]) {
+        for(x = [0 : inner_inc : size[0] - ply_thickness]) {
             translate([
                 ply_thickness + x,
                 ply_thickness + lumber_thickness,
@@ -181,7 +184,7 @@ module box(size) {
     }
 
     module inner_height_lumber() {
-        for(x = [0 : inc : size[0] - ply_thickness]) {
+        for(x = [0 : inner_inc : size[0] - ply_thickness]) {
             translate([
                 ply_thickness + x,
                 ply_thickness,
@@ -199,8 +202,10 @@ module box(size) {
         echo(inner_lumber_boards * 2, "inner height lumber", inner_height_lumber_length);
     }
 
+    feet_inc = (size[0] - bed_frame_board_size[0]) / (inner_lumber_boards - 1);
+
     module feet() {
-        for(x = [0 : inc : size[0] - ply_thickness]) {
+        for(x = [0 : feet_inc : size[0] - ply_thickness]) {
             translate([x, 0, 0])
             cube([bed_frame_board_size[0], box_wooden_width, bed_frame_board_size[1]]);
         }
@@ -295,11 +300,11 @@ module wedge_2(tall) {
 module outline() {
     bed_frame();
 
-    mattress();
-    pillow();
-    wedge(false);
-    pillow_2();
-    wedge_2(true);
+    // mattress();
+    // pillow();
+    // wedge(false);
+    // pillow_2();
+    // wedge_2(true);
 
     box_a();
     box_a2();
