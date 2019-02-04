@@ -294,14 +294,16 @@ module wedge_2(tall) {
 
 module outline() {
     bed_frame();
+
     mattress();
-    box_a();
-    box_a2();
-    box_b();
     pillow();
     wedge(false);
     pillow_2();
     wedge_2(true);
+
+    box_a();
+    box_a2();
+    box_b();
 }
 
 outline();
