@@ -54,6 +54,7 @@ function howToCutBoards1D(
 		for (const cut of way) {
 			stockCut["cut" + cut] = stockCut["cut" + cut] + 1
 		}
+		// stockCut["remainder"] = stockSize - _.sum(way)
 		return stockCut
 	})
 
@@ -84,6 +85,9 @@ function howToCutBoards1D(
 
 	// Run the program
 	const results = solver.Solve(model)
+
+	console.log(model)
+	console.log(results)
 
 	if (!results.feasible) {
 		throw new Error("Didn't work")
@@ -134,13 +138,12 @@ async function main() {
 	// 8ft boards at Lowes.
 	const bedFrameBoardResult = howToCutBoards1D(12 * 8, bedFrameBoard)
 
-	console.log("required", bedFrameBoard)
 	console.log(
 		"You will need to buy",
 		_.sum(bedFrameBoardResult.map(({ count }) => count)),
-		"bed frame boards cut to",
-		bedFrameBoardResult
+		"bed frame boards"
 	)
+	console.log(bedFrameBoardResult)
 
 	// [ { size: 11, count: 28 },
 	// 	{ size: 21, count: 14 },
@@ -160,9 +163,28 @@ async function main() {
 	console.log(
 		"You will need to buy",
 		_.sum(boxFrameResult.map(({ count }) => count)),
-		"box frame boards cut to",
-		boxFrameResult
+		"box frame boards"
 	)
+	console.log(boxFrameResult)
+	const frameLumberRemainder = frameLumber
+		.map(({ size, count }) => ({ [size]: count }))
+		.reduce((acc, next) => ({ ...acc, ...next }))
+	for (const { count, cuts } of boxFrameResult) {
+		for (const cut of cuts) {
+			frameLumberRemainder[cut] = frameLumberRemainder[cut] - Math.floor(count)
+		}
+	}
+	const oneMoreTime = Object.keys(frameLumberRemainder)
+		.filter(key => frameLumberRemainder[key] > 0)
+		.map(key => ({
+			size: parseFloat(key),
+			count: frameLumberRemainder[key],
+		}))
+	console.log(oneMoreTime)
+
+	const boxFrameResult2 = howToCutBoards1D(12 * 8, oneMoreTime)
+
+	console.log(boxFrameResult2)
 
 	// 2D
 	// ply
