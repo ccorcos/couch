@@ -3,6 +3,20 @@ import * as _ from "lodash"
 import * as solver from "javascript-lp-solver/src/solver"
 import * as util from "util"
 
+function isSubset(a: Array<number>, b: Array<number>) {
+	const a2 = [...a]
+	for (const n of b) {
+		const i = a2.indexOf(n)
+		if (i !== -1) {
+			a2.splice(i, 1)
+			if (a2.length === 0) {
+				return true
+			}
+		}
+	}
+	return a2.length === 0
+}
+
 /**
  * Given a board of `size` and a list of `cuts` you
  * can make out of the board, how many unique ways of cutting the board
@@ -13,24 +27,23 @@ function howManyWays(
 	cuts: Array<number>,
 	state: Array<number> = []
 ): Array<Array<number>> {
-	return _.flatten(
-		cuts.map(cut => {
-			const remainder = size - cut
-			if (remainder >= 0) {
-				return _.uniqWith(
-					howManyWays(remainder, cuts, [...state, cut].sort()),
-					(x, y) =>
-						_.difference(x, y).length === 0 || _.difference(y, x).length === 0
-				)
-			} else {
-				return [state]
-			}
-		})
+	return _.uniqWith(
+		_.flatten(
+			cuts.map(cut => {
+				const remainder = size - cut
+				if (remainder >= 0) {
+					return howManyWays(remainder, cuts, [...state, cut])
+				} else {
+					return [state]
+				}
+			})
+		),
+		(x, y) => isSubset(x, y) || isSubset(y, x)
 	)
 }
 
 type RequiredCuts = Array<{ size: number; count: number }>
-type ResultCuts = Array<{ count: number; cuts: Array<number> }>
+type ResultCuts = Array<{ count: number; decimal: number; cuts: Array<number> }>
 
 /**
  * Given a stock side of wood you and buy, how many do I need and how do I cut it
@@ -86,8 +99,8 @@ function howToCutBoards1D(
 	// Run the program
 	const results = solver.Solve(model)
 
-	console.log(model)
-	console.log(results)
+	// console.log(model)
+	// console.log(results)
 
 	if (!results.feasible) {
 		throw new Error("Didn't work")
@@ -97,8 +110,17 @@ function howToCutBoards1D(
 
 	for (let i = 0; i < waysOfCutting.length; i++) {
 		const number = results["version" + i]
-		if (number) {
-			resultCuts.push({ count: number, cuts: waysOfCutting[i] })
+		if (number !== undefined && number > 0) {
+			// Need to take the ceiling because even though we're using integer mode,
+			// the final cuts will still have a remainder balance which computes to
+			// the remainder decimal. We'll store the raw decimal in there in case you
+			// want to use it somewhere else.
+			// https://github.com/JWally/jsLPSolver/issues/84
+			resultCuts.push({
+				count: Math.ceil(number),
+				decimal: number,
+				cuts: waysOfCutting[i],
+			})
 		}
 	}
 
@@ -166,26 +188,8 @@ async function main() {
 		"box frame boards"
 	)
 	console.log(boxFrameResult)
-	const frameLumberRemainder = frameLumber
-		.map(({ size, count }) => ({ [size]: count }))
-		.reduce((acc, next) => ({ ...acc, ...next }))
-	for (const { count, cuts } of boxFrameResult) {
-		for (const cut of cuts) {
-			frameLumberRemainder[cut] = frameLumberRemainder[cut] - Math.floor(count)
-		}
-	}
-	const oneMoreTime = Object.keys(frameLumberRemainder)
-		.filter(key => frameLumberRemainder[key] > 0)
-		.map(key => ({
-			size: parseFloat(key),
-			count: frameLumberRemainder[key],
-		}))
-	console.log(oneMoreTime)
 
-	const boxFrameResult2 = howToCutBoards1D(12 * 8, oneMoreTime)
-
-	console.log(boxFrameResult2)
-
+	// TODO
 	// 2D
 	// ply
 	// foams!

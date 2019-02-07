@@ -1,4 +1,11 @@
 Compiling design (CSG Tree generation)...
+ECHO: "BOM: bed_frame_board", 76
+ECHO: "BOM: bed_frame_board", 76
+ECHO: "BOM: bed_frame_board", 76
+ECHO: "BOM: bed_frame_board", 76
+ECHO: "BOM: bed_frame_board", 76
+ECHO: "BOM: bed_frame_board", 76
+ECHO: "BOM: bed_frame_board", 76
 ECHO: "BOM: bed_frame_board", 80
 ECHO: "BOM: bed_frame_board", 80
 ECHO: "BOM: bed_frame_board", 80
@@ -6,23 +13,16 @@ ECHO: "BOM: bed_frame_board", 80
 ECHO: "BOM: bed_frame_board", 80
 ECHO: "BOM: bed_frame_board", 80
 ECHO: "BOM: bed_frame_board", 80
-ECHO: "BOM: bed_frame_board", 76
-ECHO: "BOM: bed_frame_board", 76
-ECHO: "BOM: bed_frame_board", 76
-ECHO: "BOM: bed_frame_board", 76
-ECHO: "BOM: bed_frame_board", 76
-ECHO: "BOM: bed_frame_board", 76
-ECHO: "BOM: bed_frame_board", 76
-ECHO: "BOM: bed_frame_board", 76
-ECHO: "BOM: bed_frame_board", 76
-ECHO: "BOM: bed_frame_board", 76
-ECHO: "BOM: bed_frame_board", 76
-ECHO: "BOM: bed_frame_board", 76
-ECHO: "BOM: bed_frame_board", 76
-ECHO: "BOM: bed_frame_board", 76
-ECHO: "BOM: bed_frame_board", 76
-ECHO: "BOM: bed_frame_board", 76
-ECHO: "BOM: bed_frame_board", 76
+ECHO: "BOM: bed_frame_board", 80
+ECHO: "BOM: bed_frame_board", 80
+ECHO: "BOM: bed_frame_board", 80
+ECHO: "BOM: bed_frame_board", 80
+ECHO: "BOM: bed_frame_board", 80
+ECHO: "BOM: bed_frame_board", 80
+ECHO: "BOM: bed_frame_board", 80
+ECHO: "BOM: bed_frame_board", 80
+ECHO: "BOM: bed_frame_board", 80
+ECHO: "BOM: bed_frame_board", 80
 ECHO: "BOM: pillow_foam", 6, 40, 19
 ECHO: "BOM: fabric (pillow)", 62, 64
 ECHO: "BOM: wedge_foam ", 10, 14
