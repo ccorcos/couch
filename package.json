@@ -1,0 +1,27 @@
+{
+  "name": "couch",
+  "version": "1.0.0",
+  "description": "![](./couch.png)",
+  "main": "bom.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ccorcos/couch.git"
+  },
+  "keywords": [],
+  "author": "Chet Corcos <ccorcos@gmail.com> (http://www.chetcorcos.com/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ccorcos/couch/issues"
+  },
+  "homepage": "https://github.com/ccorcos/couch#readme",
+  "dependencies": {
+    "@types/fs-extra": "^5.0.4",
+    "@types/lodash": "^4.14.120",
+    "fs-extra": "^7.0.1",
+    "javascript-lp-solver": "^0.4.5",
+    "lodash": "^4.17.11"
+  }
+}

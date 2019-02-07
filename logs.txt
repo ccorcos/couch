@@ -1,0 +1,195 @@
+Compiling design (CSG Tree generation)...
+ECHO: "BOM: bed_frame_board", 80
+ECHO: "BOM: bed_frame_board", 80
+ECHO: "BOM: bed_frame_board", 80
+ECHO: "BOM: bed_frame_board", 80
+ECHO: "BOM: bed_frame_board", 80
+ECHO: "BOM: bed_frame_board", 80
+ECHO: "BOM: bed_frame_board", 80
+ECHO: "BOM: bed_frame_board", 76
+ECHO: "BOM: bed_frame_board", 76
+ECHO: "BOM: bed_frame_board", 76
+ECHO: "BOM: bed_frame_board", 76
+ECHO: "BOM: bed_frame_board", 76
+ECHO: "BOM: bed_frame_board", 76
+ECHO: "BOM: bed_frame_board", 76
+ECHO: "BOM: bed_frame_board", 76
+ECHO: "BOM: bed_frame_board", 76
+ECHO: "BOM: bed_frame_board", 76
+ECHO: "BOM: bed_frame_board", 76
+ECHO: "BOM: bed_frame_board", 76
+ECHO: "BOM: bed_frame_board", 76
+ECHO: "BOM: bed_frame_board", 76
+ECHO: "BOM: bed_frame_board", 76
+ECHO: "BOM: bed_frame_board", 76
+ECHO: "BOM: bed_frame_board", 76
+ECHO: "BOM: pillow_foam", 6, 40, 19
+ECHO: "BOM: fabric (pillow)", 62, 64
+ECHO: "BOM: wedge_foam ", 10, 14
+ECHO: "BOM: fabric (wedge)", 53.2047, 62
+ECHO: "BOM: pillow_foam", 6, 40, 19
+ECHO: "BOM: fabric (pillow)", 62, 64
+ECHO: "BOM: wedge_foam ", 10, 14
+ECHO: "BOM: fabric (wedge)", 53.2047, 62
+ECHO: "inner_inc", 13.75
+ECHO: "feet_inc", 13.6667
+ECHO: "BOM: frame_lumber (side length)", 84
+ECHO: "BOM: frame_lumber (side length)", 84
+ECHO: "BOM: frame_lumber (side length)", 84
+ECHO: "BOM: frame_lumber (side length)", 84
+ECHO: "BOM: frame_lumber (width length)", 3.5
+ECHO: "BOM: frame_lumber (width)", 3.5
+ECHO: "BOM: frame_lumber (width length)", 3.5
+ECHO: "BOM: frame_lumber (width)", 3.5
+ECHO: "BOM: frame_lumber (width length)", 3.5
+ECHO: "BOM: frame_lumber (width)", 3.5
+ECHO: "BOM: frame_lumber (width length)", 3.5
+ECHO: "BOM: frame_lumber (width)", 3.5
+ECHO: "BOM: frame_lumber (width length)", 3.5
+ECHO: "BOM: frame_lumber (width)", 3.5
+ECHO: "BOM: frame_lumber (width length)", 3.5
+ECHO: "BOM: frame_lumber (width)", 3.5
+ECHO: "BOM: frame_lumber (width length)", 3.5
+ECHO: "BOM: frame_lumber (width)", 3.5
+ECHO: "BOM: frame_lumber (height)", 11
+ECHO: "BOM: frame_lumber (height)", 11
+ECHO: "BOM: frame_lumber (height)", 11
+ECHO: "BOM: frame_lumber (height)", 11
+ECHO: "BOM: frame_lumber (height)", 11
+ECHO: "BOM: frame_lumber (height)", 11
+ECHO: "BOM: frame_lumber (height)", 11
+ECHO: "BOM: frame_lumber (height)", 11
+ECHO: "BOM: frame_lumber (height)", 11
+ECHO: "BOM: frame_lumber (height)", 11
+ECHO: "BOM: frame_lumber (height)", 11
+ECHO: "BOM: frame_lumber (height)", 11
+ECHO: "BOM: frame_lumber (height)", 11
+ECHO: "BOM: frame_lumber (height)", 11
+ECHO: "BOM: bed_frame_board (box feet)", 7
+ECHO: "BOM: bed_frame_board (box feet)", 7
+ECHO: "BOM: bed_frame_board (box feet)", 7
+ECHO: "BOM: bed_frame_board (box feet)", 7
+ECHO: "BOM: bed_frame_board (box feet)", 7
+ECHO: "BOM: bed_frame_board (box feet)", 7
+ECHO: "BOM: bed_frame_board (box feet)", 7
+ECHO: "BOM: ply (box top)", 84.5, 7
+ECHO: "BOM: ply (box side)", 84, 14
+ECHO: "BOM: ply (box side)", 84, 14
+ECHO: "BOM: ply (box end)", 7, 14
+ECHO: "BOM: ply (box end)", 7, 14
+ECHO: "BOM: top_foam (box top)", 85.5, 8
+ECHO: "BOM: side_foam (box side)", 84.5, 14.25
+ECHO: "BOM: side_foam (box side)", 84.5, 14.25
+ECHO: "BOM: side_foam (box end)", 8, 14.25
+ECHO: "BOM: side_foam (box end)", 8, 14.25
+ECHO: "inner_inc", 13.75
+ECHO: "feet_inc", 13.6667
+ECHO: "BOM: frame_lumber (side length)", 84
+ECHO: "BOM: frame_lumber (side length)", 84
+ECHO: "BOM: frame_lumber (side length)", 84
+ECHO: "BOM: frame_lumber (side length)", 84
+ECHO: "BOM: frame_lumber (width length)", 3.5
+ECHO: "BOM: frame_lumber (width)", 3.5
+ECHO: "BOM: frame_lumber (width length)", 3.5
+ECHO: "BOM: frame_lumber (width)", 3.5
+ECHO: "BOM: frame_lumber (width length)", 3.5
+ECHO: "BOM: frame_lumber (width)", 3.5
+ECHO: "BOM: frame_lumber (width length)", 3.5
+ECHO: "BOM: frame_lumber (width)", 3.5
+ECHO: "BOM: frame_lumber (width length)", 3.5
+ECHO: "BOM: frame_lumber (width)", 3.5
+ECHO: "BOM: frame_lumber (width length)", 3.5
+ECHO: "BOM: frame_lumber (width)", 3.5
+ECHO: "BOM: frame_lumber (width length)", 3.5
+ECHO: "BOM: frame_lumber (width)", 3.5
+ECHO: "BOM: frame_lumber (height)", 11
+ECHO: "BOM: frame_lumber (height)", 11
+ECHO: "BOM: frame_lumber (height)", 11
+ECHO: "BOM: frame_lumber (height)", 11
+ECHO: "BOM: frame_lumber (height)", 11
+ECHO: "BOM: frame_lumber (height)", 11
+ECHO: "BOM: frame_lumber (height)", 11
+ECHO: "BOM: frame_lumber (height)", 11
+ECHO: "BOM: frame_lumber (height)", 11
+ECHO: "BOM: frame_lumber (height)", 11
+ECHO: "BOM: frame_lumber (height)", 11
+ECHO: "BOM: frame_lumber (height)", 11
+ECHO: "BOM: frame_lumber (height)", 11
+ECHO: "BOM: frame_lumber (height)", 11
+ECHO: "BOM: bed_frame_board (box feet)", 7
+ECHO: "BOM: bed_frame_board (box feet)", 7
+ECHO: "BOM: bed_frame_board (box feet)", 7
+ECHO: "BOM: bed_frame_board (box feet)", 7
+ECHO: "BOM: bed_frame_board (box feet)", 7
+ECHO: "BOM: bed_frame_board (box feet)", 7
+ECHO: "BOM: bed_frame_board (box feet)", 7
+ECHO: "BOM: ply (box top)", 84.5, 7
+ECHO: "BOM: ply (box side)", 84, 14
+ECHO: "BOM: ply (box side)", 84, 14
+ECHO: "BOM: ply (box end)", 7, 14
+ECHO: "BOM: ply (box end)", 7, 14
+ECHO: "BOM: top_foam (box top)", 85.5, 8
+ECHO: "BOM: side_foam (box side)", 84.5, 14.25
+ECHO: "BOM: side_foam (box side)", 84.5, 14.25
+ECHO: "BOM: side_foam (box end)", 8, 14.25
+ECHO: "BOM: side_foam (box end)", 8, 14.25
+ECHO: "inner_inc", 13
+ECHO: "feet_inc", 12.9167
+ECHO: "BOM: frame_lumber (side length)", 79.5
+ECHO: "BOM: frame_lumber (side length)", 79.5
+ECHO: "BOM: frame_lumber (side length)", 79.5
+ECHO: "BOM: frame_lumber (side length)", 79.5
+ECHO: "BOM: frame_lumber (width length)", 3.5
+ECHO: "BOM: frame_lumber (width)", 3.5
+ECHO: "BOM: frame_lumber (width length)", 3.5
+ECHO: "BOM: frame_lumber (width)", 3.5
+ECHO: "BOM: frame_lumber (width length)", 3.5
+ECHO: "BOM: frame_lumber (width)", 3.5
+ECHO: "BOM: frame_lumber (width length)", 3.5
+ECHO: "BOM: frame_lumber (width)", 3.5
+ECHO: "BOM: frame_lumber (width length)", 3.5
+ECHO: "BOM: frame_lumber (width)", 3.5
+ECHO: "BOM: frame_lumber (width length)", 3.5
+ECHO: "BOM: frame_lumber (width)", 3.5
+ECHO: "BOM: frame_lumber (width length)", 3.5
+ECHO: "BOM: frame_lumber (width)", 3.5
+ECHO: "BOM: frame_lumber (height)", 21
+ECHO: "BOM: frame_lumber (height)", 21
+ECHO: "BOM: frame_lumber (height)", 21
+ECHO: "BOM: frame_lumber (height)", 21
+ECHO: "BOM: frame_lumber (height)", 21
+ECHO: "BOM: frame_lumber (height)", 21
+ECHO: "BOM: frame_lumber (height)", 21
+ECHO: "BOM: frame_lumber (height)", 21
+ECHO: "BOM: frame_lumber (height)", 21
+ECHO: "BOM: frame_lumber (height)", 21
+ECHO: "BOM: frame_lumber (height)", 21
+ECHO: "BOM: frame_lumber (height)", 21
+ECHO: "BOM: frame_lumber (height)", 21
+ECHO: "BOM: frame_lumber (height)", 21
+ECHO: "BOM: bed_frame_board (box feet)", 7
+ECHO: "BOM: bed_frame_board (box feet)", 7
+ECHO: "BOM: bed_frame_board (box feet)", 7
+ECHO: "BOM: bed_frame_board (box feet)", 7
+ECHO: "BOM: bed_frame_board (box feet)", 7
+ECHO: "BOM: bed_frame_board (box feet)", 7
+ECHO: "BOM: bed_frame_board (box feet)", 7
+ECHO: "BOM: ply (box top)", 80, 7
+ECHO: "BOM: ply (box side)", 79.5, 24
+ECHO: "BOM: ply (box side)", 79.5, 24
+ECHO: "BOM: ply (box end)", 7, 24
+ECHO: "BOM: ply (box end)", 7, 24
+ECHO: "BOM: top_foam (box top)", 81, 8
+ECHO: "BOM: side_foam (box side)", 80, 24.25
+ECHO: "BOM: side_foam (box side)", 80, 24.25
+ECHO: "BOM: side_foam (box end)", 8, 24.25
+ECHO: "BOM: side_foam (box end)", 8, 24.25
+Compiling design (CSG Products generation)...
+Geometries in cache: 24
+Geometry cache size in bytes: 16872
+CGAL Polyhedrons in cache: 0
+CGAL cache size in bytes: 0
+Compiling design (CSG Products normalization)...
+Normalized CSG tree has 176 elements
+Compile and preview finished.
+Total rendering time: 0 hours, 0 minutes, 0 seconds
