@@ -32,6 +32,10 @@ function howManyWays(
 type RequiredCuts = Array<{ size: number; count: number }>
 type ResultCuts = Array<{ count: number; cuts: Array<number> }>
 
+/**
+ * Given a stock side of wood you and buy, how many do I need and how do I cut it
+ * in order to make enough pieces of with at the given sizes.
+ */
 function howToCutBoards1D(
 	stockSize: number,
 	requiredCuts: RequiredCuts
@@ -79,9 +83,7 @@ function howToCutBoards1D(
 	}
 
 	// Run the program
-	console.log("Model", util.inspect(model, { showHidden: false, depth: null }))
 	const results = solver.Solve(model)
-	console.log("Solution", results)
 
 	if (!results.feasible) {
 		throw new Error("Didn't work")
@@ -89,11 +91,9 @@ function howToCutBoards1D(
 
 	const resultCuts: ResultCuts = []
 
-	console.log("You will need to buy", results.result, "boards.")
 	for (let i = 0; i < waysOfCutting.length; i++) {
 		const number = results["version" + i]
 		if (number) {
-			console.log(number, "will be cut to sizes", waysOfCutting[i])
 			resultCuts.push({ count: number, cuts: waysOfCutting[i] })
 		}
 	}
@@ -132,7 +132,41 @@ async function main() {
 	).map(arr => ({ size: arr[0].size, count: arr.length }))
 
 	// 8ft boards at Lowes.
-	howToCutBoards1D(12 * 8, bedFrameBoard)
+	const bedFrameBoardResult = howToCutBoards1D(12 * 8, bedFrameBoard)
+
+	console.log("required", bedFrameBoard)
+	console.log(
+		"You will need to buy",
+		_.sum(bedFrameBoardResult.map(({ count }) => count)),
+		"bed frame boards cut to",
+		bedFrameBoardResult
+	)
+
+	// [ { size: 11, count: 28 },
+	// 	{ size: 21, count: 14 },
+	// 	{ size: 84, count: 8 },
+	// 	{ size: 3.5, count: 42 },
+	// 	{ size: 79.5, count: 4 } ]
+	const frameLumber = _.values(
+		_.groupBy(groups.frame_lumber, item => item.size)
+	).map(arr => ({ size: arr[0].size, count: arr.length }))
+
+	// 8ft boards at Lowes.
+	const boxFrameResult = howToCutBoards1D(12 * 8, frameLumber)
+
+	// Hmm. They're fractions! Waiting on this issue.
+	// https://github.com/JWally/jsLPSolver/issues/84
+
+	console.log(
+		"You will need to buy",
+		_.sum(boxFrameResult.map(({ count }) => count)),
+		"box frame boards cut to",
+		boxFrameResult
+	)
+
+	// 2D
+	// ply
+	// foams!
 }
 
 main()
