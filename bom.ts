@@ -43,13 +43,13 @@ async function main() {
 	// 	{ size: 76, count: 17 },
 	// 	{ size: 80, count: 7 } ]
 
-	// 8ft boards at Lowes.
-	const bedFrameBoardStockSize = 12 * 8
+	const bladeSize = 0.125
 
-	const bedFrameBoardResult = howToCutBoards1D(
-		bedFrameBoardStockSize,
-		bedFrameBoardRequirements
-	)
+	const bedFrameBoardResult = howToCutBoards1D({
+		stockSizes: [{ size: 12 * 8, cost: 1 }, { size: 12 * 2, cost: 1 / 4 }],
+		bladeSize: bladeSize,
+		requiredCuts: bedFrameBoardRequirements,
+	})
 	const totalNumberOfStockBedFrameBoards = _.sum(
 		bedFrameBoardResult.map(({ count }) => count)
 	)
@@ -62,13 +62,11 @@ async function main() {
 	// 	{ size: 3.5, count: 42 },
 	// 	{ size: 79.5, count: 4 } ]
 
-	// 8ft boards at Lowes.
-	const boxFrameStockSize = 12 * 8
-
-	const boxFrameResult = howToCutBoards1D(
-		boxFrameStockSize,
-		boxFrameRequirements
-	)
+	const boxFrameResult = howToCutBoards1D({
+		stockSizes: [{ size: 12 * 8, cost: 1 }, { size: 12 * 2, cost: 1 / 5 }],
+		bladeSize: bladeSize,
+		requiredCuts: boxFrameRequirements,
+	})
 	const totalNumberOfBoxFrameBoards = _.sum(
 		bedFrameBoardResult.map(({ count }) => count)
 	)
