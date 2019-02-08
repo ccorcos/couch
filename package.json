@@ -22,7 +22,7 @@
     "@types/lodash": "^4.14.120",
     "@types/node": "^10.12.21",
     "fs-extra": "^7.0.1",
-    "javascript-lp-solver": "^0.4.5",
+    "stock-cutting": "^1.0.2",
     "lodash": "^4.17.11",
     "ts-node": "^8.0.2",
     "typescript": "^3.3.1"
