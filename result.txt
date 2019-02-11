@@ -1,0 +1,118 @@
+{
+  "bed_frame_board": {
+    "total": 24,
+    "requirements": [
+      {
+        "size": 7,
+        "count": 21
+      },
+      {
+        "size": 76,
+        "count": 7
+      },
+      {
+        "size": 80,
+        "count": 17
+      }
+    ],
+    "cuts": [
+      {
+        "stock": {
+          "size": 96,
+          "cost": 1
+        },
+        "count": 7,
+        "decimal": 7,
+        "cuts": [7,7,76]
+      },
+      {
+        "stock": {
+          "size": 96,
+          "cost": 1
+        },
+        "count": 17,
+        "decimal": 17,
+        "cuts": [7, 7, 80]
+      }
+    ]
+  },
+  "frame_lumber": {
+    "total": 24,
+    "requirements": [
+      {
+        "size": 11,
+        "count": 28
+      },
+      {
+        "size": 21,
+        "count": 14
+      },
+      {
+        "size": 84,
+        "count": 8
+      },
+      {
+        "size": 3.5,
+        "count": 42
+      },
+      {
+        "size": 79.5,
+        "count": 4
+      }
+    ],
+    "cuts": [
+      {
+        "stock": {
+          "size": 96,
+          "cost": 1
+        },
+        "count": 2,
+        "decimal": 1.5625,
+        "cuts": [11, 11, 11, 11, 11, 11, 11, 11]
+      },
+      {
+        "stock": {
+          "size": 96,
+          "cost": 1
+        },
+        "count": 4,
+        "decimal": 3.5,
+        "cuts": [11, 21, 21, 21, 21]
+      },
+      {
+        "stock": {
+          "size": 96,
+          "cost": 1
+        },
+        "count": 8,
+        "decimal": 8,
+        "cuts": [
+          11,
+          84
+        ]
+      },
+      {
+        "stock": {
+          "size": 96,
+          "cost": 1
+        },
+        "count": 4,
+        "decimal": 4,
+        "cuts": [
+          11,
+          3.5,
+          79.5
+        ]
+      },
+      {
+        "stock": {
+          "size": 96,
+          "cost": 1
+        },
+        "count": 2,
+        "decimal": 1.58333333,
+        "cuts": [3.5, 3.5, 3.5, 3.5, 3.5, 3.5, 3.5, 3.5, 3.5, 3.5, 3.5, 3.5, 3.5, 3.5, 3.5, 3.5, 3.5, 3.5, 3.5, 3.5, 3.5, 3.5, 3.5, 3.5]
+      }
+    ]
+  }
+}
