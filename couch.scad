@@ -316,8 +316,8 @@ module outline() {
 
     mattress();
     pillow();
-    wedge(false);
     pillow_2();
+    wedge(false);
     wedge_2(true);
 
     box_a();
@@ -326,10 +326,3 @@ module outline() {
 }
 
 outline();
-
-
-
-
-
-
-

@@ -25,10 +25,10 @@ ECHO: "BOM: bed_frame_board", 80
 ECHO: "BOM: bed_frame_board", 80
 ECHO: "BOM: pillow_foam", 6, 40, 19
 ECHO: "BOM: fabric (pillow)", 62, 64
-ECHO: "BOM: wedge_foam ", 10, 14
-ECHO: "BOM: fabric (wedge)", 53.2047, 62
 ECHO: "BOM: pillow_foam", 6, 40, 19
 ECHO: "BOM: fabric (pillow)", 62, 64
+ECHO: "BOM: wedge_foam ", 10, 14
+ECHO: "BOM: fabric (wedge)", 53.2047, 62
 ECHO: "BOM: wedge_foam ", 10, 14
 ECHO: "BOM: fabric (wedge)", 53.2047, 62
 ECHO: "inner_inc", 13.75
@@ -192,4 +192,4 @@ CGAL cache size in bytes: 0
 Compiling design (CSG Products normalization)...
 Normalized CSG tree has 176 elements
 Compile and preview finished.
-Total rendering time: 0 hours, 0 minutes, 0 seconds
+Total rendering time: 0 hours, 0 minutes, 2 seconds
