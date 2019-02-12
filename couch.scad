@@ -13,9 +13,15 @@ frame_lumber_thickness = 1.5;
 top_foam_thickness = 2;
 side_foam_thickness = 0.5;
 
+bed_frame_board_size = [2.5, 0.75];
+bed_frame_base_boards = 7;
+bed_frame_cross_boards = 17;
+
+base_height = bed_frame_board_size[1] * 2 + mattress_height;
+
 box_wooden_width = 8 - 2 * side_foam_thickness;
-side_box_height = mattress_height + 9 - top_foam_thickness;
-back_box_height = mattress_height + 19 - top_foam_thickness;
+side_box_height = base_height + 9 - top_foam_thickness;
+back_box_height = base_height + 19 - top_foam_thickness;
 box_a_length = mattress_length + mattress_space + box_wooden_width;
 box_b_length = mattress_width;
 
@@ -27,9 +33,6 @@ wedge_height = 10;
 wedge_length = 14;
 wedge_width = pillow_width;
 
-bed_frame_board_size = [2.5, 0.75];
-bed_frame_base_boards = 7;
-bed_frame_cross_boards = 17;
 
 inner_lumber_boards = 7;
 
@@ -277,7 +280,7 @@ module pillow() {
     echo("BOM: fabric (pillow)", 2*pillow_height + 2*pillow_thickness + 2*fabric_margin, 2*pillow_thickness + 2*fabric_margin + pillow_width);
 
     color("purple")
-    translate([mattress_length - pillow_thickness,0,mattress_height])
+    translate([mattress_length - pillow_thickness,0,base_height])
     cube([pillow_thickness, pillow_width, pillow_height]);
 }
 
@@ -290,13 +293,13 @@ module wedge(tall) {
 
     if (tall) {
         color("pink")
-        translate([mattress_length - pillow_thickness,0,mattress_height])
+        translate([mattress_length - pillow_thickness,0,base_height])
         rotate([90,0,180])
         linear_extrude(wedge_width)
         polygon(triangle_points,triangle_paths);
     } else {
         color("pink")
-        translate([mattress_length - pillow_thickness,0,mattress_height])
+        translate([mattress_length - pillow_thickness,0,base_height])
         translate([0,wedge_width,0]) rotate([90,-90,0])
         linear_extrude(wedge_width)
         polygon(triangle_points,triangle_paths);

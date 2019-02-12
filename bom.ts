@@ -1,6 +1,11 @@
 import * as fs from "fs-extra"
 import * as _ from "lodash"
-import { howToCutBoards1D, howToCutBoards2D, StockSize2D } from "stock-cutting"
+import {
+	howToCutBoards1D,
+	howToCutBoards2D,
+	StockSize2D,
+	isEqual2D,
+} from "stock-cutting"
 
 function accumulatePieces<Size>(
 	pieces: Array<Piece<Size>>,
@@ -73,19 +78,25 @@ async function main() {
 		bedFrameBoardResult.map(({ count }) => count)
 	)
 
-	// Log results!
 	console.log(
 		JSON.stringify(
 			{
-				bed_frame_board: {
-					total: totalNumberOfStockBedFrameBoards,
-					requirements: bedFrameBoardRequirements,
-					cuts: bedFrameBoardResult,
+				"2d": {
+					ply: accumulatePieces(groups.ply, size => size.join(",")),
+					top_foam: accumulatePieces(groups.top_foam, size => size.join(",")),
+					side_foam: accumulatePieces(groups.side_foam, size => size.join(",")),
 				},
-				frame_lumber: {
-					total: totalNumberOfBoxFrameBoards,
-					requirements: boxFrameRequirements,
-					cuts: boxFrameResult,
+				"1d": {
+					bed_frame_board: {
+						total: totalNumberOfStockBedFrameBoards,
+						requirements: bedFrameBoardRequirements,
+						cuts: bedFrameBoardResult,
+					},
+					frame_lumber: {
+						total: totalNumberOfBoxFrameBoards,
+						requirements: boxFrameRequirements,
+						cuts: boxFrameResult,
+					},
 				},
 			},
 			null,

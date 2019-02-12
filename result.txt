@@ -1,118 +1,185 @@
 {
-  "bed_frame_board": {
-    "total": 24,
-    "requirements": [
+  "2d": {
+    "ply": [
       {
-        "size": 7,
-        "count": 21
+        "size": [ 84.5, 7 ],
+        "count": 2
       },
       {
-        "size": 76,
-        "count": 7
+        "size": [ 84, 15.5 ],
+        "count": 4
       },
       {
-        "size": 80,
-        "count": 17
+        "size": [ 7, 15.5 ],
+        "count": 4
+      },
+      {
+        "size": [ 80, 7 ],
+        "count": 1
+      },
+      {
+        "size": [ 79.5, 25.5 ],
+        "count": 2
+      },
+      {
+        "size": [ 7, 25.5 ],
+        "count": 2
       }
     ],
-    "cuts": [
+    "top_foam": [
       {
-        "stock": {
-          "size": 96,
-          "cost": 1
-        },
-        "count": 7,
-        "decimal": 7,
-        "cuts": [7,7,76]
+        "size": [ 85.5, 8 ],
+        "count": 2
       },
       {
-        "stock": {
-          "size": 96,
-          "cost": 1
-        },
-        "count": 17,
-        "decimal": 17,
-        "cuts": [7, 7, 80]
+        "size": [ 81, 8 ],
+        "count": 1
+      }
+    ],
+    "side_foam": [
+      {
+        "size": [ 84.5, 15.75 ],
+        "count": 4
+      },
+      {
+        "size": [ 8, 15.75 ],
+        "count": 4
+      },
+      {
+        "size": [ 80, 25.75 ],
+        "count": 2
+      },
+      {
+        "size": [ 8, 25.75 ],
+        "count": 2
       }
     ]
   },
-  "frame_lumber": {
-    "total": 24,
-    "requirements": [
-      {
-        "size": 11,
-        "count": 28
-      },
-      {
-        "size": 21,
-        "count": 14
-      },
-      {
-        "size": 84,
-        "count": 8
-      },
-      {
-        "size": 3.5,
-        "count": 42
-      },
-      {
-        "size": 79.5,
-        "count": 4
-      }
-    ],
-    "cuts": [
-      {
-        "stock": {
-          "size": 96,
-          "cost": 1
+  "1d": {
+    "bed_frame_board": {
+      "total": 24,
+      "requirements": [
+        {
+          "size": 7,
+          "count": 21
         },
-        "count": 2,
-        "decimal": 1.5625,
-        "cuts": [11, 11, 11, 11, 11, 11, 11, 11]
-      },
-      {
-        "stock": {
-          "size": 96,
-          "cost": 1
+        {
+          "size": 76,
+          "count": 7
         },
-        "count": 4,
-        "decimal": 3.5,
-        "cuts": [11, 21, 21, 21, 21]
-      },
-      {
-        "stock": {
-          "size": 96,
-          "cost": 1
+        {
+          "size": 80,
+          "count": 17
+        }
+      ],
+      "cuts": [
+        {
+          "stock": {
+            "size": 96,
+            "cost": 1
+          },
+          "count": 7,
+          "decimal": 7,
+          "cuts": [
+            7,
+            7,
+            76
+          ]
         },
-        "count": 8,
-        "decimal": 8,
-        "cuts": [
-          11,
-          84
-        ]
-      },
-      {
-        "stock": {
-          "size": 96,
-          "cost": 1
+        {
+          "stock": {
+            "size": 96,
+            "cost": 1
+          },
+          "count": 17,
+          "decimal": 17,
+          "cuts": [
+            7,
+            7,
+            80
+          ]
+        }
+      ]
+    },
+    "frame_lumber": {
+      "total": 24,
+      "requirements": [
+        {
+          "size": 84,
+          "count": 8
         },
-        "count": 4,
-        "decimal": 4,
-        "cuts": [
-          11,
-          3.5,
-          79.5
-        ]
-      },
-      {
-        "stock": {
-          "size": 96,
-          "cost": 1
+        {
+          "size": 3.5,
+          "count": 42
         },
-        "count": 2,
-        "decimal": 1.58333333,
-        "cuts": [3.5, 3.5, 3.5, 3.5, 3.5, 3.5, 3.5, 3.5, 3.5, 3.5, 3.5, 3.5, 3.5, 3.5, 3.5, 3.5, 3.5, 3.5, 3.5, 3.5, 3.5, 3.5, 3.5, 3.5]
-      }
-    ]
+        {
+          "size": 12.5,
+          "count": 28
+        },
+        {
+          "size": 79.5,
+          "count": 4
+        },
+        {
+          "size": 22.5,
+          "count": 14
+        }
+      ],
+      "cuts": [
+        {
+          "stock": {
+            "size": 96,
+            "cost": 1
+          },
+          "count": 8,
+          "decimal": 8,
+          "cuts": [
+            84
+          ]
+        },
+        {
+          "stock": {
+            "size": 96,
+            "cost": 1
+          },
+          "count": 28,
+          "decimal": 28,
+          "cuts": [
+            3.5,
+            3.5,
+            3.5,
+            12.5
+          ]
+        },
+        {
+          "stock": {
+            "size": 96,
+            "cost": 1
+          },
+          "count": 4,
+          "decimal": 4,
+          "cuts": [
+            3.5,
+            3.5,
+            3.5,
+            79.5
+          ]
+        },
+        {
+          "stock": {
+            "size": 96,
+            "cost": 1
+          },
+          "count": 14,
+          "decimal": 14,
+          "cuts": [
+            3.5,
+            3.5,
+            3.5,
+            22.5
+          ]
+        }
+      ]
+    }
   }
 }
