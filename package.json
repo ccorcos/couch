@@ -23,7 +23,7 @@
     "@types/node": "^10.12.21",
     "fs-extra": "^7.0.1",
     "stock-cutting": "^1.2.0",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.13",
     "ts-node": "^8.0.2",
     "typescript": "^3.3.1"
   }
