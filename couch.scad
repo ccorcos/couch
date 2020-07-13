@@ -1,7 +1,11 @@
 
+
 mattress_length = 76;
 mattress_width = 80;
 mattress_height = 8;
+
+mattress_center_y = mattress_width / 2;
+mattress_center_x = mattress_length / 2;
 
 mattress_space = 1.5;
 
@@ -247,10 +251,13 @@ module box(size) {
     }
 
 
+    // =======================================================
+    // Visibility
+    // =======================================================
     lumber();
     feet();
-    ply();
-    foam();
+    // ply();
+    // foam();
 
     if (show_fabric) {
         color("green") fabric();
@@ -314,18 +321,59 @@ module wedge_2(tall) {
     translate([0, pillow_width]) wedge(tall);
 }
 
+module turntable() {
+    $fn = 64;
+
+    extra = (mattress_space + box_wooden_width) / 2;
+    radius = 42;
+
+
+    center_x = mattress_center_x + extra;
+    center_y = mattress_center_y;
+
+    color("blue")
+    translate([center_x, center_y, -1])
+    cylinder(1, radius, true);
+
+    wheel_spacing = 8;
+
+
+    for(r = [0 : wheel_spacing : radius - 1]) {
+        arc_length = 2*PI*r;
+        n_wheels = ceil(arc_length / wheel_spacing);
+        for (n = [0 : 1: n_wheels]) {
+            color("green")
+            translate([center_x, center_y, -2])
+            rotate([0,0,360/n_wheels*n])
+            translate([r,0,0])
+            cylinder(1, 1, true);
+            i = i + 1;
+        }
+    }
+
+    box([])
+
+}
+
 module outline() {
     bed_frame();
 
-    mattress();
-    pillow();
-    pillow_2();
-    wedge(false);
-    wedge_2(true);
+    //mattress();
+    //pillow();
+    //pillow_2();
+    //wedge(false);
+    //wedge_2(true);
 
     box_a();
     box_a2();
     box_b();
+
+    turntable();
+
+
+
+
+    // Jump to Visibility section.
 }
 
 outline();
