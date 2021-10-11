@@ -321,37 +321,71 @@ module wedge_2(tall) {
     translate([0, pillow_width]) wedge(tall);
 }
 
+
+extra = (mattress_space + box_wooden_width) / 2;
+center_x = mattress_center_x + extra;
+center_y = mattress_center_y;
+
+base_x1 = - box_wooden_width - mattress_space;
+base_x2 = mattress_width + box_wooden_width + mattress_space;
+base_y1 = 0;
+base_y2 = mattress_length + box_wooden_width + mattress_space;
+
+sheet_metal_thickness = 0.1;
+plate_metal_thickness = 0.2;
+base_gap = 0.1;
+
+plate_width = 2;
+
+module turntableBase() {
+    dy = base_y2 - base_y1;
+    dx = base_x2 - base_x1;
+
+    cube([dy, dx, sheet_metal_thickness]);
+
+    translate([0, 0, -plate_width])
+    cube([dy, plate_metal_thickness, plate_width]);
+
+    translate([0, dx, -plate_width])
+    cube([dy, plate_metal_thickness, plate_width]);
+
+    translate([0, 0, -plate_width])
+    cube([plate_metal_thickness, dx, plate_width]);
+
+    translate([dy, 0, -plate_width])
+    cube([plate_metal_thickness, dx, plate_width]);
+
+}
+
+
 module turntable() {
-    $fn = 64;
+    color("green", 0.6)
+    translate([0, base_x1, -sheet_metal_thickness - base_gap])
+    turntableBase();
 
-    extra = (mattress_space + box_wooden_width) / 2;
-    radius = 42;
+    // $fn = 64;
 
-
-    center_x = mattress_center_x + extra;
-    center_y = mattress_center_y;
-
-    color("blue")
-    translate([center_x, center_y, -1])
-    cylinder(1, radius, true);
-
-    wheel_spacing = 8;
+    // radius = 42;
 
 
-    for(r = [0 : wheel_spacing : radius - 1]) {
-        arc_length = 2*PI*r;
-        n_wheels = ceil(arc_length / wheel_spacing);
-        for (n = [0 : 1: n_wheels]) {
-            color("green")
-            translate([center_x, center_y, -2])
-            rotate([0,0,360/n_wheels*n])
-            translate([r,0,0])
-            cylinder(1, 1, true);
-            i = i + 1;
-        }
-    }
+    // color("blue")
+    // translate([center_x, center_y, -1])
+    // cylinder(1, radius, true);
 
-    box([])
+    // wheel_spacing = 8;
+
+    // for(r = [0 : wheel_spacing : radius - 1]) {
+    //     arc_length = 2*PI*r;
+    //     n_wheels = ceil(arc_length / wheel_spacing);
+    //     for (n = [0 : 1: n_wheels]) {
+    //         color("green")
+    //         translate([center_x, center_y, -2])
+    //         rotate([0,0,360/n_wheels*n])
+    //         translate([r,0,0])
+    //         cylinder(1, 1, true);
+    //         i = i + 1;
+    //     }
+    // }
 
 }
 
